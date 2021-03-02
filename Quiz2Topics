@@ -1,0 +1,196 @@
+public static void main(String args[]){
+	      //COMMENTS 101 
+		 
+		 // This is a valid comment because it starts with // and is only one line.
+		 
+		 /* This is a valid comment because it starts with /* and ends with */
+		 
+		 /*This is also a valid comment because this syntax can carry 
+		   a comment over 
+		   multiple lines.
+		  */
+		 
+		 
+		 
+		 
+		 //PRINTING STATEMENTS AND CONCATENATION
+		 
+		 border();
+		 System.out.println("This is a statement!");
+		 System.out.println("This is a result: " + 1*4);
+		 System.out.println("This is the actual operation: 1*4");
+		 
+		 System.out.println("Order of operations says things with same precendence go left to right");
+		 System.out.println(1+4+" bazinga");
+		 System.out.println("bazinga" + (1+4));
+		 border();
+		 System.out.println("");
+		 
+		 System.out.println("Order of operations is (),Unary(positive/negative sign), */%, +-, =");
+		 System.out.println("Think PUMAA");
+		 System.out.println("Parentheses(), Unary(positive/negative), Multiplicative(*/%), Additive(+-), Assignment(=)");
+		 
+		 //EXPRESSION EVALUATION
+		 
+		 border();
+		 System.out.println("So let's say, you are given the operation 1%5.");
+		 System.out.println(1%5);
+		 System.out.println();
+		 System.out.println("5 cannot fit into 1, so the int result is 0 with a remainder of 1.");
+		 border();
+		 
+		 //WHENEVER YOU SEE "%" AKA "MODULOUS" AKA "REMAINDER" OPERATION I WANT YOU TO THINK OF IT LIKE THIS:
+		 //IN THE EXAMPLE OF 1%5:
+		 /*
+		  * 1. Think of it as 1/5.
+		  *      _____ 
+		  * 	5|1
+		  * 		
+		  * 2. Solve and record remainder.
+		  *      _0_____
+		  * 	5|1
+		  * 	 -0
+		  * 	-----
+		  * 	  1         So the result is 0 remainder 1. 
+		  * 
+		  * 3. The remainder is what % is looking for. So
+		  * the remainder you found in step 2 is the result!
+		  * 
+		  * So 1%5 is equal to 1!		
+		  * 
+		  * 
+		  */
+		 
+		 //System.out.println(7*3);
+		 //System.out.println(21%4);
+		 //System.out.println(7 * 3 % 4 - 10);
+		 
+		 // STEP BY STEP ORDER OF OPERATIONS EXAMPLE:
+		 /*
+		  * 1. PARENTHESES FIRST!!! so the first expression we evaluate, according to
+		  * the order of operations would be (17-5) which is equal to 12.
+		  */
+			System.out.println(1*-24%(17-5));
+		 /*
+		  * 2.UNARY(POSITIVE/NEGATIVE SIGN). The next thing the code would recognize is that 
+		  * the value 24 is negative because it's sign comes right after another operation "*" 
+		  * instead of a number.
+		  * 
+		  */
+			System.out.println(1*-24%(12));
+			
+			
+			System.out.println(-24%12);
+		/*
+		  * 3.MULTIPLICATIVE. Since we have 2 operations in the expression that have multiplicative signs (*, and %)
+		  * we will do those from left to right. They have the same importance.
+		  * 
+		  * So first, 1 * -24
+		  *which is still -24.
+		  *
+		  * Then, -24 % 12.
+		  * 
+		  * 	Think back to the steps on modulous.
+		  * 
+		  * 	1. Think of division.
+		  * 			__2_
+		  * 		12 |-24
+		  * 		remainder: 0
+		  * 
+		  * 	2. Your remainder is the result of the % operation!.
+		  * 
+		  * 
+		  * 
+		  */
+	
+			border();
+	
+	
+		 
+		 
+		 //DECLARING AND INITIALIZING VARIABLES
+		 
+
+	
+		 
+		 
+		 System.out.println("Declaring a variable is giving it a type. Assigning a variable is giving it a value.");
+		 
+		
+	
+		 
+		 
+		 
+		 //REASSIGNMENT
+		 
+		 int x = 1;
+		 int y = 2;
+		 	 
+		 System.out.println(x);
+		 System.out.println(y);
+		 
+		 x = 3;
+		 y = 4;
+		 
+		 System.out.println(x);
+		 System.out.println(y);
+		 
+		 
+		 
+		 
+		 //Assignment happens from right to left,
+		 //The value on the right, gets stored in the left.
+		 //I.e. in the case of y = 4, the value 4 is stored
+		 //inside the variable y.
+		 
+		 
+		 
+	   }
+	 
+	 //STATIC METHODS 
+
+	 //You can use static methods to basically
+	 //give certain pieces of code that repeat
+	 //a name for the sake of convienience. 
+	 //Instead of retyping the same code over and over,
+	 //we can just keep calling a static method we
+	 //created.
+	 
+	 
+	 //For example, here is a static method I have named border.
+	 
+	 /*I want the output of this code to look readable 
+	  * so I've created a separate method named border so that
+	  * instead of typing out all of the dashes myself, i can just
+	  * make the code repeat the function for me!
+	  * 
+	  *  
+	  *  If you look throughout this code you'll see i've already used
+	  *  this method a ton of times! Make sure you make your new method
+	  *  OUTSIDE the main method. Then you can call it from WITHIN
+	  *  the main method like I did earlier on in the code.*/
+	 
+	 
+	 
+	 public static void border() {
+		 System.out.println("-------------------------------------------");
+	 }
+	 
+	 //You can even put a method in a method. For example:
+	 
+	 
+	 public static void bigborder() {
+		 border();
+		 border();
+		 border();
+	 }
+	 
+	 //Now, if you went back in the code and replaced each "border();"
+	 //with "bigborder();" take a look at your output now!
+	 
+	 
+	 
+	 
+	 
+	 
+}
