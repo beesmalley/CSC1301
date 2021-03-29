@@ -1,0 +1,145 @@
+/* WELCOME CSC1301 CLASS to QUIZ 3 REVIEW!!
+ * 
+ * Organized by BEE, Written by BEE, and made with LOVE by BEE
+ * 
+ * Last Edited:
+ * 3/29/21 @ 9AM
+ */
+
+//IMPORTANT SCANNER REMINDER
+//You MUST import using java.util.Scanner; OR java.util.*; to import util class necessary to use Scanner.
+
+import java.util.*;
+
+public class Quiz_3_Review {
+	
+	public static void main(String[] args) {
+	
+
+/* TABLE OF CONTENTS
+ * 
+ * SCANNER (Imported Line 12, Line 36)
+ * 
+ * IF/ELSE (Line 44) (Example 2, Line 53)
+ * 
+ * IF/ELSE NESTED (Line 69 lol)
+ * 
+ * FOR LOOPS (Line 117)
+ * 
+ * FOR LOOPS NESTED (Line 125)
+ * 
+ * SHORTHAND (Line 133)
+ * 
+ * &&, || (Line 79, Line 90, Line 101, Line 142)
+ */
+	
+		//SCANNER (imported java.util.*; at line 12)
+		
+		String apple;
+		Scanner userAnswer = new Scanner(System.in);
+		System.out.print("What word would you like to be stored in the variable \"apple\" ? ==> ");
+		apple = userAnswer.nextLine();
+		
+		
+		//IF/ELSE
+		
+		if (apple.contains("bug")) {
+			System.out.println("User inputed \"bug\"");
+		}
+		else {
+			System.out.println("Why did you not write bug ? >:( you had one instruction.");
+		}
+		
+		//IF/ELSE EXAMPLE 2
+		
+		int number;
+		System.out.println("For this example, enter an integer. ==> ");
+		number = userAnswer.nextInt();
+		
+		if (number>0) {
+			System.out.println("The user's number is positive.");
+		}
+		else if (number<0) {
+			System.out.println("The user's number is negative.");
+		}
+		else {
+			System.out.println("The user's number is 0.");
+		}
+		
+		//IF/ELSE NESTED
+		
+		int grade;
+		System.out.println("Please enter a grade between 0 and 100 for the next example. ==> ");
+		grade = userAnswer.nextInt();
+		
+		if (grade>=90) {
+			if (grade>=97) {
+				System.out.print("Congratulations! You got an A+");
+			}
+			else if (grade>=93 && grade<97) {
+				System.out.print("Congratulations! You got an A.");
+			}
+			else {
+			System.out.print("Congratulations! You got an A-");
+			}
+		}
+		else if (grade>=80) {
+			if (grade>=87) {
+				System.out.print("Congratulations! You got a B+");
+			}
+			else if (grade>=84 && grade<87) {
+				System.out.print("Congratulations! You got a B");
+			}
+			else {
+			System.out.print("Congratulations! You got a B-");
+			}
+		}
+		else if (grade>=70) {
+			if (grade>=77) {
+				System.out.print("Congratulations! You got a C+");
+			}
+			else if (grade>=74 && grade< 77) {
+				System.out.print("Congratulations! You got a C.");
+			}
+			else {
+			System.out.print("Congratulations! You got a C-");
+			}
+		}
+		else if (grade>=60) {
+			System.out.print("Congratulations! You got a D.");
+		}
+		else {
+			System.out.print("Look my guy, I'm gonna level with ya.... pls study");
+		}
+		
+		System.out.println();
+		
+		//FOR LOOPS
+		
+		for (int i=0;i<=10;i++) {
+			System.out.println("i = "+i);
+		}
+		
+		System.out.println("-------------------");
+		
+		//FOR LOOPS NESTED
+		
+		for (int i=0;i<=10;i++) {
+			for (int j=0;j<=10;j++) {
+				System.out.println("i = "+i+" and j = "+j);
+			}
+		}
+	
+		//SHORTHANDS (i++,i--, i*=2, etc)
+		
+		//i*=2 is i=i*2
+		//i/=2 is i=i/2
+		//i++ is i=i+1
+		//i-- is i=i-1
+		//i+=2 is i=i+2
+		//i-=2 is i=i-2
+		
+		//|| is BOOLEAN OR
+		//&& is BOOLEAN AND
+	}
+}
