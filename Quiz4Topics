@@ -1,0 +1,149 @@
+import java.util.Random; // imported for use of Random class
+
+//QUIZ 4 ULTIMATE REVIEW
+
+public class Quiz_4_Review {
+
+	/* Methods with Parameters (Line 23)
+	 * 
+	 * String Methods (Line 71)
+	 * 
+	 * char-int-String (Line 81)
+	 * 
+	 * Random (Line 95)
+	 * 
+	 * while Loops (Line 122)
+	 * 
+	 * do-while Loops (Line 112)
+	 * 
+	 * Boolean type (Line 135)
+	 * 
+	 */
+	
+	//METHODS WITH PARAMETERS
+	
+	public static void what(int oh) {
+		oh = oh + 1;
+		System.out.println(oh);
+	}
+	
+	public static int what2(int oh) {
+		return oh=oh+1;
+	}
+	
+	public static boolean doesIt(String str) {
+		return str.contains("it");
+	}
+	
+	public static String cool(String str) {
+		if (str.contains("apple")) {
+			return "yes";
+		}
+		else {
+			return "no";
+		}
+	}
+	public static void main(String[] args) {
+		System.out.println("Parameters and returns: ");
+		what(5);
+		System.out.println(what2(5));
+		System.out.println(doesIt("it can"));
+		System.out.println(cool("apple"));
+		line();
+		System.out.println("String methods: ");
+		stringyBoy("Bobi");
+		line();
+		System.out.println("char-int-String: ");
+		charPrac('h');
+		line();
+		System.out.println("Random: ");
+		ranran();
+		line();
+		System.out.println("While loops: ");
+		loopywoo();
+		line();
+		loopynoo();
+		line();
+		System.out.println("Boolean: ");
+		boolboy();
+}
+	
+	//STRING METHODS
+	
+	public static void stringyBoy(String str) {
+		System.out.println(str+" has "+str.length()+" letters.");
+		System.out.println("The index of \"b\" is "+str.indexOf("b"));
+		System.out.println(str.substring(1,2));
+		System.out.println(str.substring(3));
+		System.out.println(str+" capitalized is "+ str.toUpperCase());
+	}
+	
+	//char-int-String
+	
+	//Mixing char and int causes automatic conversion to int.
+	//To convert an int into the equivalent char, type cast it.
+	//Specify chars with 'one' quotation instead of "two"
+	
+	public static void charPrac(char a) {
+		System.out.println('a'-a);
+		System.out.println((char)('a'+a));
+	}
+	
+	//String is an object; it contains methods
+	//char is primitive type, not object
+	
+	//RANDOM
+	
+	public static void ranran() {
+		Random rand = new Random();
+		int randomNumber = rand.nextInt(10); // min 0, max 9 
+		int randomNumber2 = rand.nextInt(6)+1; //min 1, max 6
+		int randomNumber3 = rand.nextInt(7)+7; //min 7, max 13
+		int randomNumber4 = 2*rand.nextInt(7)+7; // 
+		System.out.println(randomNumber4);
+		System.out.println(randomNumber3);
+		System.out.println(randomNumber2);
+		System.out.println(randomNumber);
+		//If rand.nextInt(6)+1; then 1 is the min, and 6+1=7, so the max is 7-1 or 6.
+		//If rand.nextInt(7)+7, 7 is min, 7+7=14, so max is 14-1 or 13.
+		
+	}
+	
+	public static void loopywoo() {
+		
+		int i=10;
+		do {
+			System.out.println(i);
+			i--;
+			
+		}while (i>=1);
+	}
+	
+	public static void loopynoo() {
+		
+		int i=10;
+		while (i>=1) {
+			System.out.println(i);
+			i--;
+		}
+	}
+	
+	public static void line() {
+		System.out.println("---------------------------");
+	}
+	
+	public static void boolboy() {
+		
+		boolean flag1 = false; //some false condition
+		boolean flag2 =true; //some true condition
+		
+		if (flag1 || flag1 && flag2) {
+			System.out.print("a");
+		}
+		else {
+			System.out.print("b");
+		}
+	}
+	
+	
+}
