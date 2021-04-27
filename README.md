@@ -1,6 +1,6 @@
 # CSC1301
 
-This CSC1301 repository is meant to contain helpful snippets of code formulated by me to
+This CSC1301 repository is meant to contain helpful snippets of code to
 simplify different CSC1301 concepts so they can be effectively discussed and interacted with
 by others to further understanding.
 
