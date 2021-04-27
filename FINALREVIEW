@@ -1,0 +1,385 @@
+import java.util.*;
+
+
+public class hub {
+	
+		/* GENERAL FINAL INFORMATION
+		 * -------------------------
+		 */
+		// 11:00AM - 7:00PM (Time window for Final on 27th)
+		// 2Hrs 30mins to complete when started
+		// 35 Questions on the Final
+		// Some are multiple choice, some are short answer (no explanation needed)
+		// "What is going to be printed?"
+		// Some questions to write code, majority of questions on reading
+		// Different scales of difficulty, all over the map
+		// Questions from all over the course, all questions fair game
+		// Can use written notes and books, but no electronic resources
+		
+		
+		
+		
+		// TOPICS:
+		/*
+		 *  CONVERSIONS (Decimal to binary, binary to decimal, 2s complement)  (Line 37)
+		 *  
+		 *  BOOLEAN ALGEBRA (Line 137)
+		 * 
+		 *  METHODS && METHODS WITH PARAMETERS && STRING METHODS (Line 194)
+		 *  
+		 *  % OPERATION (Line 254)
+		 *  
+		 *  ASSERTIONS (Line 285)
+		 *  
+		 *  ARRAYS (Line 331)
+		 */
+		
+		//CONVERSIONS
+		/*
+		 * BINARY TO DECIMAL
+		 * ------------------
+		 * If you have a binary pattern: 1101, how would you convert that to decimal?
+		 * 
+		 * 1. Recognize that binary is in base 2, so each position's quantity is valued at 2 to the power of a number.
+		 * 
+		 * 	For example, in the binary pattern 1101, the rightmost digit is "1" and it is in the 2^0 position.
+		 * 	So we will need to multiply that 1 by 2^0. (Keep in mind, any number to the 0 power will equal 1).
+		 * 
+		 * 1*2^0 = 1*1 = 1.
+		 * 
+		 * 2. The next number from right to left in the binary pattern is 0. 0 is in the 2^1 position.
+		 * 
+		 * So 0*2^1 = 0*2 = 0.
+		 * 
+		 * It is safe to assume that if a binary digit is 0, the product of that digit and the 2's power will be 0.
+		 * (Anything times 0 is 0).
+		 * 
+		 * 3. Third digit from the right is 1, and it is in the 2^2 position.
+		 * 	So 1*2^2 = 1*4 = 4.
+		 * 
+		 * 4. Fourth digit (and our final digit) is "1" and it is in the 2^3 position.
+		 * So 1*2^3 = 1*8 = 8.
+		 * 
+		 * 5. Now that we have evaluated each digit seperately, we just add those values together.
+		 * So 1+0+4+8 = 13.
+		 * 
+		 * So the decimal representation of the binary pattern 1101 is 13.
+		 * 
+		 * 
+		 * 
+		 *	DECIMAL TO BINARY
+		 *---------------------
+		 * To find the binary representation of a number, instead of multiplying by powers of 2, we divide by 2 over and
+		 * over until the quotient is 0 (not including remainder).
+		 * 
+		 * So let's use the example of 13 again.
+		 * 
+		 * 1. First we'll divide 13 by 2 and record the remainder. (When dividing by two, you will only get
+		 * 0 and 1 as remainders. An odd number will yield the remainder 1, and an even number will yield remainder 0.)
+		 * 
+		 * 		13/2 = 6 remainder 1.  (2 fits into 13 6 times without going over, then there is just 1 left to account for)
+		 * 
+		 * 2. Repeat step 1, dividing each quotient by 2 until the quotient 0 is found.
+		 * 
+		 * 		13/2 = 6 remainder 1.
+		 * 		6/2 = 3 remainder 0.
+		 * 		3/2 = 1 remainder 1.
+		 * 		1/2 = 0 remainder 1.
+		 * 
+		 * 3. Look at the remainders and record them from the last one found to the first one found from left to right.
+		 * 
+		 * 	1101.
+		 * 
+		 *  Voila! 1101 is the binary representation of the decimal value 13.
+		 *  
+		 *  
+		 *  2s COMPLEMENT
+		 *  --------------------
+		 *  
+		 *  The positive binary representation of a number is the same as in 2s complement. The only difference
+		 *  between 2s complement and binary, is that the 2s complement system also handles negative values
+		 *  by specifying at the beginning of the bit pattern with either a 1 (negative) or a 0 (positive).
+		 *  
+		 *  If someone told me to show them the 2s complement form of a positive number, I would just give them
+		 *  the binary representation with a couple 0s tacked on to the left part of the bit pattern.
+		 *  
+		 *  So the 2s complement representation of 13 would be the same as what we found above, (1101) but with a couple
+		 *  0s to signify that it's positive. (001101).
+		 *  
+		 *  When asked to find the 2s complement of a negative integer (let's say -13), you would first need to find
+		 *  the binary representation of the positive version of that number.
+		 *  
+		 *  We found earlier that the representation of positive 13 is 1101.
+		 *  
+		 *  Starting from there,
+		 *  
+		 *  1. Tack on a couple zeros to the left to signify the bit pattern's positive value.
+		 *  
+		 *  	001101
+		 *  
+		 *  2. Invert the digits so 0s become 1s and 1s become 0s.
+		 *  
+		 *  	110010
+		 *  
+		 *  3. Then just add 1! (Binary addition)
+		 *  
+		 *  	110010
+		 *  	+	 1
+		 *  ------------
+		 *  	110011
+		 *  
+		 *  So the 2s complement of -13 is 110011. We can see it is a negative value because of the "1" at the beginning.
+		 * 
+		 * 
+		 * 
+		 */
+		
+		// BOOLEAN ALGEBRA
+		/*----------------------
+		 *  There are four operations used in boolean algebra that you need to be familiar with.
+		 *  
+		 *  1. NOT
+		 *  
+		 *  The symbol used in java for the NOT operation is "!".
+		 *  
+		 *  So if x = 3,
+		 *  the assertion that (x != 4) is true. X does NOT equal 4, because we can see it was declared as 3 earlier.
+		 *  
+		 *  In a truth table containing values of only 1 (meaning true) and 0 (meaning false), this is how NOT operates:
+		 *  
+		 *  NOT (1) = 0  (if something is NOT true, it is false.) 
+		 *  NOT (0) = 1  (if something is NOT false, it is true.)
+		 *  
+		 *  
+		 *  2. AND
+		 *  
+		 *  The symbol used in java for the AND operation is "&&".
+		 *  
+		 *  In a truth table containing values of only 1 (meaning true) and 0 (meaning false), this is how AND operates:
+		 *  
+		 *  1 AND 1 = 1 (the AND operation will ONLY result in true if both parts of the equation are equal to true.)
+		 *  1 AND 0 = 0 (if something is (true AND false) it will return false, because both need to be true.)
+		 *  0 AND 1 = 0
+		 *  0 AND 0 = 0 
+		 *  
+		 *  3. OR
+		 *  
+		 *  The symbol used in java for the OR operation is "||"
+		 *  
+		 *  In a truth table containing values of only 1 (meaning true) and 0 (meaning false), this is how OR operates:
+		 *  
+		 *  1 OR 1 = 1
+		 *  1 OR 0 = 1
+		 *  0 OR 1 = 1
+		 *  0 OR 0 = 0
+		 *  
+		 *  OR will result in true as long as at least one side of the equation is equal to true. It will only 
+		 *  result in false if both sides are false.
+		 *  
+		 *  4. XOR
+		 *  
+		 *  The symbol used in java for the XOR operation is "^" (though you probably don't need to know that for the test)
+		 *  
+		 *  XOR will only result true if the values presented are different from each other.
+		 *  
+		 *  1 XOR 1 = 0
+		 *  1 XOR 0 = 1
+		 *  0 XOR 1 = 1
+		 *  0 XOR 0 = 0
+		 *  
+		 *  
+		 * 
+		 */
+		
+		//METHODS && METHODS WITH PARAMETERS
+		/*-------------------------------
+		 *  below is a seperate method created to show you different String methods. 
+		 *  I encourage you to mess with this code and provide a different String parameter
+		 *  to really understand how these work.
+		 */
+
+		public static void stringyBoy(String str) {
+			System.out.println(str+" has "+str.length()+" letters.");
+			System.out.println("The index of \"b\" is "+str.indexOf("b"));
+			System.out.println(str.substring(1,5));
+			System.out.println(str.substring(3,6));
+			System.out.println(str+" capitalized is "+ str.toLowerCase());
+			System.out.println(str+" "+str.charAt(3));
+			System.out.println(str.contains("Bobi"));
+			System.out.println(str.equalsIgnoreCase("bobi brown"));
+			System.out.println("------------------");
+		}
+		/* Below here are examples of methods that REQUIRE a return value of the specified type.
+		 * You'll notice that these methods do not include "void" but instead have specified a 
+		 * data type in it's place. This means the method MUST include a return statement
+		 * that returns a value of that type. Keep in mind, returning a value does NOT mean printing it.
+		 * It simply means that is the value returned from that method (so you could use it in calculations and
+		 * you could even print it with the println method but it would not just automatically print)
+		 * 
+		 */
+		
+		public static int show(int oh) {
+			return oh= oh+1;
+		}
+		
+		public static boolean doesIt(String word) {
+			return word.contains("it");
+		}
+		
+		public static String cool(String str) {
+			if (str.contains("apple")) {
+				return "yes";
+			}
+			else {
+				return "no";
+			}
+		}
+		
+		//Below here is a simple example of how parameters work as well as where the main is located in this code.
+		// The main is what I mainly (hah) encourage you to alter. (give different parameters to methods etc.).
+		
+		public static void strange(int x) {
+			x = x + 1;
+			System.out.println("1. x = "+x);
+		}
+		
+		public static void main(String[] args) {
+			int x = 23;
+			strange(x);
+			System.out.println("2. x = "+x);
+			stringyBoy("Bobi Brown");
+			System.out.println(doesIt("it does"));
+		}
+		
+		// MODULOUS
+		
+		 //WHENEVER YOU SEE "%" AKA "MODULOUS" AKA "REMAINDER" OPERATION I WANT YOU TO THINK OF IT LIKE THIS:
+		 //IN THE EXAMPLE OF 1%5:
+		 /*
+		  * 1. Think of it as 1/5.
+		  *      _____ 
+		  * 	5|1
+		  * 		
+		  * 2. Solve and record remainder.
+		  *      _0_____
+		  * 	5|1
+		  * 	 -0
+		  * 	-----
+		  * 	  1         So the result is 0 remainder 1. 
+		  * 
+		  * 3. The remainder is what % is looking for. So
+		  * the remainder you found in step 2 is the result!
+		  * 
+		  * So 1%5 is equal to 1!		
+		  * 
+		  * 
+		  */
+		
+		public static void modulous() {
+			 System.out.println("So let's say, you are given the operation 1%5.");
+			 System.out.println(1%5);
+			 System.out.println();
+			 System.out.println("5 cannot fit into 1, so the int result is 0 with a remainder of 1.");
+		}
+		
+		//ASSERTIONS
+		/*--------------------------
+		 * Assertions are just statements that are either always true, never true, or sometimes true.
+		 * Below is an example of code with a few checkpoints listed. At each checkpoint, the chart below 
+		 * the code shows 3 assertions that are always, sometimes, or never true at that point in the code.
+		 * 
+		 * 
+		 */
+		public static int mystery2(Scanner console) {
+			int prev = 0;
+			int count = 0;
+			int next = console.nextInt();
+			
+			// Point A
+			while (next != 0){
+				//Point B
+				if (next == prev) {
+					//Point C
+					count++;
+				}
+				//Point D
+				prev = next;
+				next = console.nextInt();
+			}
+			//Point E
+			
+			return count;
+		}
+		
+		//SOMETIMES, ALWAYS, NEVER
+		/*		
+		 * 				next == 0			prev == 0			next == prev
+		 * 
+		 * POINT A		sometimes			always				sometimes
+		 * 
+		 * POINT B		never				sometimes			sometimes
+		 * 
+		 * POINT C		never				never				always
+		 * 
+		 * POINT D		sometimes			never				sometimes
+		 * 
+		 * POINT E		always				sometimes			sometimes
+		 * 
+		 * 
+		 */
+		
+		//ARRAYS
+		/*-----------------------
+		 * Below is an example of for loops that print elements of an array.
+		 * 
+		 * Some things to keep in mind about arrays:
+		 * 
+		 * 1. If you know what all of the elements of an array are (the specific values within an array)
+		 * then you can easily declare them with the declaration of the array like below.
+		 * 
+		 * int[] a = {whatever your elements are};
+		 * 
+		 * BUT if you don't know or you intend to have the user assign those array values, you can
+		 * just declare the length of the array instead.
+		 * 
+		 * The array below has 10 elements. so a.length = 10
+		 * We could declare this array as
+		 * 
+		 * int[] a = new int[10]; where 10 is the length, int is the type of value, and a is the name of the array.
+		 * 
+		 * IF YOU DO THIS keep in mind that any elements you have not assigned a value to will default to
+		 * 0. (for an int array) (if it's a String array, it defaults to null. if it's a double array, it defaults
+		 * to 0.0. if it's a boolean array, it defaults to false.)
+		 * 
+		 * 2. a.length IS NOT equal to the final value of i (the position the element).
+		 * 
+		 * In the below example, a.length is equal to 10, meaning it includes the positions 0-9. 
+		 * 
+		 * If you try to get the code to print an element that doesnt exist (so for example, if you wanted to 
+		 * print the element at a[10], you would get an outofbounds error because the max position of that
+		 * specific array is NOT 10 (that is it's LENGTH), the final POSITION would be a[9].
+		 * 
+		 */
+		public static void arrayExample() {
+			
+			int[] a = {1,9,4,8,2,14,11,3,5,6}; 
+			
+			String[] test = new String[3];
+			System.out.println(test[0]);
+			
+			for (int i=0;i<a.length;i++) {	
+			System.out.print(a[i]+" ");
+			}
+			
+			System.out.println();
+			
+			for(int i=0;i<a.length-1;i++) {
+				
+				if (a[i] > a[i+1]) {
+					a[i+1] = a[i+1]*2;
+					
+				}
+				System.out.print(a[i]+" ");
+			}	
+		}
+	}
